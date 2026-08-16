@@ -1,8 +1,8 @@
 # WeChatTweak
 
-[![README](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/sunnyyoung/WeChatTweak)
+[![README](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/thefreelight/WeChatTweak)
 [![README](https://img.shields.io/badge/Telegram-black?logo=telegram&logoColor=white)](https://t.me/+_biDl1PEk_JiMzBk)
-[![README](https://img.shields.io/badge/FAQ-black?logo=googledocs&logoColor=white)](https://github.com/sunnyyoung/WeChatTweak/wiki/FAQ)
+[![README](https://img.shields.io/badge/FAQ-black?logo=googledocs&logoColor=white)](https://github.com/thefreelight/WeChatTweak/wiki/FAQ)
 
 A command-line tool for tweaking WeChat.
 
@@ -14,9 +14,11 @@ A command-line tool for tweaking WeChat.
 
 ## 安装&使用
 
+当前已支持微信 macOS `4.1.11.80`（构建号 `269136`）的防撤回和多开。该版本目前仅支持 `x86_64`，Apple Silicon Mac 需使用 Rosetta 运行微信；原生 `arm64` 补丁尚未开放。
+
 ```bash
 # 安装
-brew install sunnyyoung/tap/wechattweak
+brew install thefreelight/tap/wechattweak
 
 # 更新
 brew upgrade wechattweak
@@ -38,7 +40,7 @@ wechattweak versions
 
 This project exists thanks to all the people who contribute.
 
-[![Contributors](https://contrib.rocks/image?repo=sunnyyoung/WeChatTweak)](https://github.com/sunnyyoung/WeChatTweak/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=thefreelight/WeChatTweak)](https://github.com/thefreelight/WeChatTweak/graphs/contributors)
 
 ## License
 
