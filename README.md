@@ -1,7 +1,7 @@
 # WeChatTweak
 
 [![README](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/sunnyyoung/WeChatTweak)
-[![README](https://img.shields.io/badge/Telegram-black?logo=telegram&logoColor=white)](https://t.me/wechattweak)
+[![README](https://img.shields.io/badge/Telegram-black?logo=telegram&logoColor=white)](https://t.me/+_biDl1PEk_JiMzBk)
 [![README](https://img.shields.io/badge/FAQ-black?logo=googledocs&logoColor=white)](https://github.com/sunnyyoung/WeChatTweak/wiki/FAQ)
 
 A command-line tool for tweaking WeChat.
