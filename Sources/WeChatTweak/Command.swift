@@ -24,7 +24,7 @@ struct Command {
     }
 
     static func patch(app: URL, config: Config) async throws {
-        try Patcher.patch(binary: app.appendingPathComponent("Contents/MacOS/WeChat"), config: config)
+        try Patcher.patch(binary: app.appendingPathComponent(config.binary), config: config)
     }
 
     static func resign(app: URL) async throws {

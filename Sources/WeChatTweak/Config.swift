@@ -9,6 +9,8 @@ import Foundation
 import MachO
 
 struct Config: Decodable {
+    static let defaultBinary = "Contents/MacOS/WeChat"
+
     enum Arch: String, Decodable {
         case arm64
         case x86_64
@@ -79,7 +81,21 @@ struct Config: Decodable {
     }
 
     let version: String
+    let binary: String
     let targets: [Target]
+
+    private enum CodingKeys: CodingKey {
+        case version
+        case binary
+        case targets
+    }
+
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.version = try container.decode(String.self, forKey: .version)
+        self.binary = try container.decodeIfPresent(String.self, forKey: .binary) ?? Self.defaultBinary
+        self.targets = try container.decode([Target].self, forKey: .targets)
+    }
 
     static func load(url: URL) async throws -> [Config] {
         if url.isFileURL {
