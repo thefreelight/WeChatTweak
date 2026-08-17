@@ -343,6 +343,16 @@
             "asm": "B801000000C3"
           }
         ]
+      },
+      {
+        "identifier": "multiInstance",
+        "entries": [
+          {
+            "arch": "x86_64",
+            "addr": "2fa038",
+            "asm": "909090909090"
+          }
+        ]
       }
     ]
   }

@@ -21,15 +21,17 @@ struct ConfigTests {
 
     @Test func decodesWeChatFourOneTwelvePatch() async throws {
         let config = try await loadConfig(json: """
-        [{"version":"269365","binary":"Contents/Resources/wechat.dylib","targets":[{"identifier":"revoke","entries":[{"arch":"x86_64","addr":"4f1c4a0","asm":"B801000000C3"}]}]}]
+        [{"version":"269365","binary":"Contents/Resources/wechat.dylib","targets":[{"identifier":"revoke","entries":[{"arch":"x86_64","addr":"4f1c4a0","asm":"B801000000C3"}]},{"identifier":"multiInstance","entries":[{"arch":"x86_64","addr":"2fa038","asm":"909090909090"}]}]}]
         """)
 
         #expect(config.version == "269365")
         #expect(config.binary == "Contents/Resources/wechat.dylib")
-        #expect(config.targets.map(\.identifier) == ["revoke"])
+        #expect(config.targets.map(\.identifier) == ["revoke", "multiInstance"])
         #expect(config.targets[0].entries[0].arch == .x86_64)
         #expect(config.targets[0].entries[0].addr == 0x4f1c4a0)
         #expect(config.targets[0].entries[0].asm == Data([0xB8, 0x01, 0x00, 0x00, 0x00, 0xC3]))
+        #expect(config.targets[1].entries[0].addr == 0x2fa038)
+        #expect(config.targets[1].entries[0].asm == Data(repeating: 0x90, count: 6))
     }
 
     private func loadConfig(json: String) async throws -> Config {
